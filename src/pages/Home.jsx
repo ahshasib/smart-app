@@ -1,9 +1,11 @@
+
 import React from 'react'
+import { Link } from 'react-router'
 
 const Home = () => {
   return (
     <div className='text-center'>
-        <button className='btn'>login</button>
+        <Link to="/login" className='btn'> Login</Link>
     </div>
   )
 }

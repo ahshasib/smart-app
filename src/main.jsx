@@ -6,6 +6,7 @@ import { RouterProvider } from "react-router";
 import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
 import AuthProvider from './context/AuthProvider';
+import ForgetPasswordPage from './pages/ForgetPasswordPage';
 
 
 
@@ -22,10 +23,10 @@ const router = createBrowserRouter([
   //   path: "/registration",
   //   element: <Reg></Reg>
   // },
-  // {
-  //   path: "/order",
-  //   element: <PrivetRoute><Order></Order></PrivetRoute>
-  // },
+  {
+    path: "/forget-password",
+    element: <ForgetPasswordPage></ForgetPasswordPage>
+  },
   
 
 ]);

@@ -1,16 +1,15 @@
 
-import React, { useRef, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router';
 import {
   signInWithPopup,
   GoogleAuthProvider,
-  signInWithEmailAndPassword,
   signOut,
-  sendPasswordResetEmail
 } from "firebase/auth";
 import { auth } from '../firebase/firebase.config';
 import { Authcontext } from '../context/AuthContext';
 import Swal from 'sweetalert2';
+
 
 
 
@@ -19,7 +18,7 @@ const LoginPage = () => {
     const provider = new GoogleAuthProvider();
     const { user, setUser, loginUser } = useContext(Authcontext);
 
-    const emailRef = useRef();
+    
   
     // ✅ Track user even after refresh
     
@@ -64,9 +63,10 @@ const LoginPage = () => {
         .catch((error) => {
           console.log(error.message);
           Swal.fire({
-            title: "you dont have any account ,please register!",
-            icon: "success",
-            draggable: true
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+            footer: '<a href="#">Why do I have this issue?</a>'
           });
         });
        
@@ -82,19 +82,7 @@ const LoginPage = () => {
     };
   
   
-  //handle forget password
-  const handleForgetPass = () =>{
-  const email = emailRef.current.value;
-  sendPasswordResetEmail(auth, email)
-    .then(() => {
-     console.log("email is sended")
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // ..
-    });
-  }
+  
 
   return (
     <div className='flex justify-center items-center w-full h-screen'>
@@ -104,10 +92,10 @@ const LoginPage = () => {
         {!user ? (
           <form className="fieldset" onSubmit={handleSubmit}>
             <label className="label">Email</label>
-            <input type="email" className="input" ref={emailRef} placeholder="Email" name="email" required />
+            <input type="email" className="input" placeholder="Email" name="email" required />
             <label className="label">Password</label>
             <input type="password" className="input" placeholder="Password" name="password" required />
-            <div><a class="link link-hover" onClick={handleForgetPass}>Forgot password?</a></div>
+            <div><Link to="/forget-password" class="link link-hover" >Forgot password?</Link></div>
             <button className="btn btn-neutral my-4">Login</button>
             <hr />
             <button

@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
 import AuthProvider from './context/AuthProvider';
 import ForgetPasswordPage from './pages/ForgetPasswordPage';
+import RegisterPage from './pages/RegisterPage';
 
 
 
@@ -19,10 +20,10 @@ const router = createBrowserRouter([
     path: "/login",
     element: <LoginPage></LoginPage>
   },
-  // {
-  //   path: "/registration",
-  //   element: <Reg></Reg>
-  // },
+  {
+    path: "/registration",
+    element: <RegisterPage></RegisterPage>
+  },
   {
     path: "/forget-password",
     element: <ForgetPasswordPage></ForgetPasswordPage>

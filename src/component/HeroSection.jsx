@@ -2,7 +2,7 @@ import React from 'react';
 
 const HeroSection = () => {
   return (
-    <div className=" w-11/12 mx-auto h-auto flex flex-col-reverse lg:flex-row-reverse items-center justify-between px-6 sm:px-12 lg:px-24 py-12">
+    <div className=" w-10/12 mx-auto h-auto flex flex-col-reverse lg:flex-row-reverse items-center justify-between   py-12">
 
       {/* Image Section */}
       <div className="flex-1 flex justify-center lg:justify-end mb-8 lg:mb-0 relative h-[300px] sm:h-[400px] lg:h-auto">
@@ -28,10 +28,10 @@ const HeroSection = () => {
         />
         
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold leading-tight">
-          All Your Jobs <br /> One Smart App!
+          All Your Jobs <br /> One Smart App
         </h1>
 
-        <p className="pt-6 text-gray-600 text-sm sm:text-base md:text-lg lg:text-[16px] w-full sm:w-[80%] lg:w-[65%] mx-auto lg:mx-0">
+        <p className="pt-6 text-gray-600 text-sm sm:text-base md:text-lg lg:text-lg w-full sm:w-[80%] lg:w-[65%] mx-auto lg:mx-0">
           Built for business owners, employees, and clients streamline job scheduling, service tracking, and team management in one powerful app.
         </p>
 

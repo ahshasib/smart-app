@@ -3,6 +3,9 @@ import React from 'react'
 import { Link } from 'react-router'
 import Navbar from '../component/Navbar'
 import HeroSection from '../component/HeroSection'
+import Features from '../component/Features'
+import ServiceSection from '../component/ServiceSection'
+import UserTestimonials from '../component/UserTestimonials'
 
 const Home = () => {
     return (
@@ -22,6 +25,12 @@ const Home = () => {
                 <div className="absolute left-0 right-0 bottom-0 h-[15%] bg-gradient-to-t from-white/95 via-white/95 to-transparent blur-7xl pointer-events-none z-100"></div>
                 
             </header>
+
+            <main>
+                <Features></Features>
+                <ServiceSection></ServiceSection>
+                <UserTestimonials></UserTestimonials>
+            </main>
 
 
             {/* <Link to="/login" className='btn'> Login</Link>

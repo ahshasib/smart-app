@@ -8,7 +8,7 @@ const HeroSection = () => {
       <div className="flex-1 flex justify-center lg:justify-end mb-8 lg:mb-0 relative h-[300px] sm:h-[400px] lg:h-auto">
         {/* Green Shadow */}
         <div className="absolute top-10 right-10 bottom-10 w-full bg-green-100/30 blur-3xl pointer-events-none"></div>
-        
+
         <img
           src="/hero-img.png"
           className="w-full h-full  max-w-[720px] object-cover object-top z-10"
@@ -16,28 +16,30 @@ const HeroSection = () => {
         />
 
         {/* Bottom White Shadow */}
-        
+
       </div>
 
       {/* Text Section */}
       <div className="flex-1 lg:ml-12 text-center lg:text-left relative mb-8 lg:mb-0">
-        <img 
-          src="Vector.svg" 
-          alt="" 
+        <img
+          src="Vector.svg"
+          alt=""
           className="absolute left-1/3 -top-1/5 w-24 sm:w-36 lg:w-48"
         />
-        
+
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold leading-tight">
           All Your Jobs <br /> One Smart App
         </h1>
-
+        <svg xmlns="http://www.w3.org/2000/svg" width="419" height="21" viewBox="0 0 419 21" fill="none">
+          <path d="M1.98018 10.4341C200.576 -1.56767 325.584 -2.12439 416.942 17.0656C332.001 8.92435 210.5 3 135.5 15C186.5 15 255 12 279 19" stroke="#3BA334" stroke-opacity="0.5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
         <p className="pt-6 text-gray-600 text-sm sm:text-base md:text-lg lg:text-lg w-full sm:w-[80%] lg:w-[65%] mx-auto lg:mx-0">
           Built for business owners, employees, and clients streamline job scheduling, service tracking, and team management in one powerful app.
         </p>
 
         {/* App Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 mt-16 justify-center lg:justify-start">
-          
+
           {/* App Store Button */}
           <a
             href="#"

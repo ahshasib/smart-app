@@ -7,6 +7,7 @@ import Features from '../component/Features'
 import ServiceSection from '../component/ServiceSection'
 import UserTestimonials from '../component/UserTestimonials'
 import FAQ from '../component/FAQ'
+import Footer from './../component/Footer';
 
 const Home = () => {
     return (
@@ -33,6 +34,10 @@ const Home = () => {
                 <UserTestimonials></UserTestimonials>
                 <FAQ></FAQ>
             </main>
+
+        <footer>
+            <Footer></Footer>
+        </footer>
 
 
             {/* <Link to="/login" className='btn'> Login</Link>

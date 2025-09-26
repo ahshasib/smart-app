@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { Authcontext } from '../context/AuthContext';
+
 import { auth } from '../firebase/firebase.config'
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth'
+import { AuthContext } from './AuthContext';
+
+
+
+
 
 const AuthProvider = ({children}) => {
   const [user, setUser] = useState(null);
@@ -44,9 +49,9 @@ const userInfo = {
 }
 
   return (
-    <Authcontext.Provider value = {userInfo}>
+    <AuthContext value = {userInfo}>
         {children}
-    </Authcontext.Provider>
+    </AuthContext>
   )
 }
 

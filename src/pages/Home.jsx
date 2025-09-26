@@ -1,6 +1,5 @@
 
 import React from 'react'
-import { Link } from 'react-router'
 import Navbar from '../component/Navbar'
 import HeroSection from '../component/HeroSection'
 import Features from '../component/Features'

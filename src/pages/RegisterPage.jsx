@@ -3,11 +3,11 @@ import { Link, useNavigate } from 'react-router'   // <-- useNavigate import
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
-import { Authcontext } from '../context/AuthContext'
+import { AuthContext } from '../context/AuthContext'
 import { auth } from '../firebase/firebase.config'
 
 const RegisterPage = () => {
-    const { user, setUser, loginUser, setLoading, loading, } = useContext(Authcontext);
+    const { user, setUser, loginUser, setLoading, loading, } = useContext(AuthContext);
     const [form, setForm] = useState({ firstName: "", lastName: "", email: "", password: "" });
     const [otpSent, setOtpSent] = useState(false);
     const [otp, setOtp] = useState("");

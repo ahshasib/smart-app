@@ -2,12 +2,12 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router';
 import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { auth } from '../firebase/firebase.config';
-import { Authcontext } from '../context/AuthContext';
+import { AuthContext } from '../context/AuthContext';
 import Swal from 'sweetalert2';
 
 const LoginPage = () => {
   const provider = new GoogleAuthProvider();
-  const { user, setUser, loginUser } = useContext(Authcontext);
+  const { user, setUser, loginUser } = useContext(AuthContext);
 
   // 👇 New state for password visibility
   const [showPassword, setShowPassword] = useState(false);

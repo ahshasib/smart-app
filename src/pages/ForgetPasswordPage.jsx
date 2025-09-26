@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import axios from 'axios';
 
 const ForgetPasswordPage = () => {

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { auth } from "../firebase/firebase.config";
+import { signInWithCustomToken } from "firebase/auth";
 
 const VerifyOtpPage = () => {
   const [otp, setOtp] = useState("");
@@ -11,14 +13,17 @@ const VerifyOtpPage = () => {
 
   const handleVerify = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/verify-otp", { email, otp });
+      const res = await axios.post("http://localhost:3000/verify-otp", { email, otp });
 
       if (res.data.success) {
+        // Firebase এ custom token দিয়ে login
+        await signInWithCustomToken(auth, res.data.token);
+
         Swal.fire({
           icon: "success",
           title: "OTP Verified!",
         }).then(() => {
-          navigate("/reset-password", { state: { email } }); // Next page to set new password
+          navigate("/reset-password", { state: { email } });
         });
       }
     } catch (err) {

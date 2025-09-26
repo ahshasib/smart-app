@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import axios from 'axios';
 
 const ForgetPasswordPage = () => {
@@ -12,7 +12,7 @@ const ForgetPasswordPage = () => {
     const email = emailRef.current.value;
 
     try {
-      const res = await axios.post("http://localhost:5000/send-otp", { email });
+      const res = await axios.post("http://localhost:3000/send-otp", { email });
 
       if (res.data.success) {
         Swal.fire({
@@ -35,9 +35,17 @@ const ForgetPasswordPage = () => {
   };
 
   return (
-    <div className="flex justify-center items-center w-full h-screen">
-      <div className="card bg-base-100 w-full max-w-sm shadow-2xl p-6">
-        <h1 className="text-center text-2xl font-bold mb-4">Reset Password</h1>
+    <div className='w-full h-screen relative'>
+      <Link to='/'><img src="/logo.png" alt="Logo" className=" absolute m-10 w-[120px] sm:w-[130px] lg:w-[147px] z-[9999] cursor-pointer" /></Link>
+
+
+      <div className="flex justify-center items-center w-full h-screen">
+
+
+
+      <div className="w-full max-w-lg p-8">
+        <h1 className="text-xl md:text-3xl font-bold">Forgot your password?</h1>
+        <p className='text-gray-600 text-sm md:text-md mb-15 py-2'>Please enter the email address associated with your account, and we'll email you a link to reset your password.</p>
         <form onSubmit={handleForgetPass}>
           <label className="label">Enter Your Email</label>
           <input
@@ -47,11 +55,12 @@ const ForgetPasswordPage = () => {
             className="input input-bordered w-full mb-4"
             required
           />
-          <button type="submit" className="btn btn-primary w-full">
-            Reset Password
+          <button type="submit" className="btn bg-[#3BA334] hover:bg-[#2E922B] text-white font-medium text-sm border-none w-full shadow-lg shadow-[#3BA334]/40 mt-5">
+          Reset Password
           </button>
         </form>
       </div>
+    </div>
     </div>
   );
 };

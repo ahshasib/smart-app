@@ -43,7 +43,7 @@ const ServiceSection = () => {
 
             </div>
             {/* First SVG */}
-            <div className="absolute -right-20 top-[7%] hidden md:block">
+            <div className="absolute -right-20 top-[7%] hidden lg:block">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="277"
@@ -63,7 +63,7 @@ const ServiceSection = () => {
             </div>
 
             {/* Second SVG */}
-            <div className="absolute right-1/2 top-[7%] z-[105] hidden md:block">
+            <div className="absolute right-1/2 top-[7%] z-[105] hidden lg:block">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="343"

@@ -35,6 +35,7 @@ useEffect(() => {
 
 
 const userInfo = {
+  setLoading,
   loading,
     user,
     setUser,

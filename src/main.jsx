@@ -8,6 +8,9 @@ import LoginPage from './pages/LoginPage';
 import AuthProvider from './context/AuthProvider';
 import ForgetPasswordPage from './pages/ForgetPasswordPage';
 import RegisterPage from './pages/RegisterPage';
+import ResetPasswordPage from './pages/ResetPasswordPage';
+
+import GotoPage from './pages/GotoPage';
 
 
 
@@ -28,7 +31,15 @@ const router = createBrowserRouter([
     path: "/forget-password",
     element: <ForgetPasswordPage></ForgetPasswordPage>
   },
-  
+  {
+    path: "/goto",
+    element: <GotoPage></GotoPage>
+  },
+  {
+    path: "/verify-otp",
+    element: <ResetPasswordPage></ResetPasswordPage>
+  },
+ 
 
 ]);
 

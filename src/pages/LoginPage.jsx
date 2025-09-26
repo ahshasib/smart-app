@@ -43,7 +43,7 @@ const LoginPage = () => {
             auth.signOut();
             return;
           } else {
-            setUser({ name: user.displayName, email: user.email, uid: user.uid });
+            setUser({ displayName: user.displayName, email: user.email, uid: user.uid });
           }
         })
         .catch((error) => {
@@ -119,7 +119,7 @@ const LoginPage = () => {
                 <Link to="/forget-password" className="link link-hover text-sm font-bold text-green-600">Forgot password?</Link>
               </div>
 
-              <button className="btn bg-[#3BA334] hover:bg-[#2E922B] text-white font-medium text-sm border-none w-full mt-2 shadow-lg shadow-[#3BA334]/40">
+              <button type="submit"   className="btn bg-[#3BA334] hover:bg-[#2E922B] text-white font-medium text-sm border-none w-full mt-2 shadow-lg shadow-[#3BA334]/40">
                 Login
               </button>
 

@@ -7,7 +7,9 @@ const ServiceSection = () => {
     return (
         <div className="relative mt-24 md:mt-36 lg:mt-48">
             <div className="text-center mb-10">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold relative inline-block">
+                <h2
+                    className="text-3xl md:text-4xl lg:text-5xl font-bold relative inline-block"
+                    style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.4)" }}>
                     Build for Everyone
                     {/* SVG underline */}
                     <div className="flex justify-end">

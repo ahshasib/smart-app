@@ -1,29 +1,38 @@
-import { sendPasswordResetEmail } from 'firebase/auth';
-import React, { useRef } from 'react'
-import { auth } from '../firebase/firebase.config';
+import React, { useRef } from 'react';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const ForgetPasswordPage = () => {
+  const emailRef = useRef();
+  const navigate = useNavigate();
 
-    const emailRef = useRef();
-//handle forget password
-const handleForgetPass = async(e) =>{
+  const handleForgetPass = async (e) => {
     e.preventDefault();
     const email = emailRef.current.value;
+
     try {
-        await sendPasswordResetEmail(auth, email);
+      const res = await axios.post("http://localhost:5000/send-otp", { email });
+
+      if (res.data.success) {
         Swal.fire({
           icon: "success",
-          title: "Email Sent!",
-          text: "Check your inbox to reset your password.",
+          title: "OTP Sent!",
+          text: "Check your email for the 6-digit code.",
+          confirmButtonText: "Proceed",
+        }).then(() => {
+          // Redirect to OTP verification page with email in state
+          navigate("/verify-otp", { state: { email } });
         });
-      } catch (error) {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: error.message,
-        });
-      }}
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: error.response?.data?.message || "Something went wrong!",
+      });
+    }
+  };
 
   return (
     <div className="flex justify-center items-center w-full h-screen">
@@ -44,7 +53,7 @@ const handleForgetPass = async(e) =>{
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ForgetPasswordPage
+export default ForgetPasswordPage;

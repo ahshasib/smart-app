@@ -13,7 +13,7 @@ const VerifyOtpPage = () => {
 
   const handleVerify = async () => {
     try {
-      const res = await axios.post("http://localhost:3000/verify-otp", { email, otp });
+      const res = await axios.post("https://smart-app-server.vercel.app/verify-otp", { email, otp });
 
       if (res.data.success) {
         // Firebase এ custom token দিয়ে login

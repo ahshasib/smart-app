@@ -56,7 +56,7 @@ const RegisterPage = () => {
         }
 
         try {
-            const res = await axios.post("http://localhost:3000/send-register-otp", form);
+            const res = await axios.post("https://smart-app-server.vercel.app/send-register-otp", form);
             if (res.data.success) {
                 Swal.fire("OTP Sent", "Check your email for the code", "success");
                 setOtpSent(true);
@@ -70,7 +70,7 @@ const RegisterPage = () => {
     const handleVerifyOtp = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post("http://localhost:3000/verify-register-otp", { email: form.email, otp });
+            const res = await axios.post("https://smart-app-server.vercel.app/verify-register-otp", { email: form.email, otp });
             if (res.data.success) {
                 Swal.fire("Success", "User registered successfully", "success");  // <-- SweetAlert
                 setForm({ firstName: "", lastName: "", email: "", password: "" });

@@ -48,13 +48,13 @@ const ResetPasswordPage = () => {
     }
   
     try {
-      const res = await axios.post("http://localhost:3000/verify-otp", { email, otp: otpValue });
+      const res = await axios.post("https://smart-app-server.vercel.app/verify-otp", { email, otp: otpValue });
       if (res.data.success) {
         setOtpVerified(true);
   
         // Firebase password reset email pathano
         await sendPasswordResetEmail(auth, email, {
-          url: "http://localhost:3000/login",
+          url: "https://smart-app-server.vercel.app/login",
         });
   
         Swal.fire({

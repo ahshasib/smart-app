@@ -12,7 +12,7 @@ const ForgetPasswordPage = () => {
     const email = emailRef.current.value;
 
     try {
-      const res = await axios.post("http://localhost:3000/send-otp", { email });
+      const res = await axios.post("https://smart-app-server.vercel.app/send-otp", { email });
 
       if (res.data.success) {
         Swal.fire({
